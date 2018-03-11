@@ -1,15 +1,25 @@
 import ValidationForm from './mobx-validator'
 
-const MedicalInsuranceValidation = () => ValidationForm(
+const MedicalInsuranceValidation = (onSuccess?: Function) => ValidationForm(
   {
     fields: [
       {
         name: 'age',
-        label: 'Введите Ваш возраст',
+        label: 'Возраст',
+        placeholder: '',
+        rules: 'required|integer|min:0|max:70'
+      },
+      {
+        name: 'gender',
+        label: 'Пол',
         placeholder: '',
         rules: 'required'
       }
-    ]
-  })
+    ],
+    hooks: {
+      onSuccess: onSuccess
+    }
+  }
+  )
 
 export default MedicalInsuranceValidation

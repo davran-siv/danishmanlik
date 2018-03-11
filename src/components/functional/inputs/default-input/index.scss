@@ -1,58 +1,64 @@
+@import "../../../../vendor/styles/elements/variables";
+
 .default-input-wrapper {
   position: relative;
-}
 
-.default-input {
-  display: block;
-  width: 100%;
-  font-size: 18px;
-  line-height: 22px;
-  border: none;
-  border-bottom: solid #DEEBF7 1px;
-  background-color: transparent;
-  padding-bottom: 8px;
-  height: 36px;
-  &:focus,
-  &:active {
-    outline: none;
-    box-shadow: none;
-    border-bottom: solid blue 1px;
-  }
-  &.has-error {
-    & ~ label {
-      color: #ff3c41;
-    }
-  }
-  &__error {
-    height: 18px;
-    font-size: 12px;
-    padding-top: 5px;
-    color: #ff3c41;
+  .error-message {
+    color: $attention-color-100;
   }
 
-  /* LABEL ======================================= */
-  & ~ label {
-    color: #979ea7;
+  .default-input {
+    display: block;
+    width: 100%;
     font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    top: 2px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-  }
+    line-height: 22px;
+    border: none;
+    border-bottom: solid #DEEBF7 1px;
+    background-color: transparent;
+    padding-bottom: 8px;
+    height: 36px;
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: none;
+      border-bottom: solid blue 1px;
+    }
+    &.has-error {
+      & ~ label {
+        color: $attention-color-100;
+      }
+    }
+    &__error {
+      height: 18px;
+      font-size: 12px;
+      padding-top: 5px;
+      color: $attention-color-100;
+    }
 
-  /* active state */
-  &:focus ~ label, &.not-empty ~ label {
-    top: -20px;
-    font-size: 12px;
-  }
+    /* LABEL ======================================= */
+    & ~ label {
+      color: #979ea7;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      top: 2px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
 
-  &__error {
-    height: 18px;
-    font-size: 12px;
-    padding-top: 5px;
-    color: #ff3c41;
+    /* active state */
+    &:focus ~ label, &.not-empty ~ label {
+      top: -20px;
+      font-size: 12px;
+    }
+
+    &__error {
+      height: 18px;
+      font-size: 12px;
+      padding-top: 5px;
+      color: $attention-color-100;
+    }
   }
 }

@@ -868,11 +868,11 @@
 }
 
 .form-group-inline {
-  .default-input-wrapper {
-    margin-right: 5px;
+  .default-input-wrapper, .default-select-wrapper {
+    margin-right: 10px;
   }
 
-  button, input[type=submit], .default-input-wrapper {
+  button, input[type=submit], .default-input-wrapper, .default-select-wrapper {
     display: inline-block;
     vertical-align: top;
   }

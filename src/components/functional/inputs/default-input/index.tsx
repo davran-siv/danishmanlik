@@ -3,14 +3,14 @@ import './index.scss'
 import * as classnames from "classnames"
 import {observer} from 'mobx-react'
 
-export interface DefaultInputProps {
+interface DefaultInputProps {
   onChange?: (event: any) => void
   placeholder?: string
   form?: any
   field?: string
   value?: string | number | null
   errorMessage?: string
-  type?: string
+  type?: 'text' | 'number' | 'email' | 'file' | 'date' | 'checkbox'
   label?: string
   disabled?: boolean
   mask?: string
