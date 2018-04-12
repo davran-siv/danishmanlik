@@ -1,6 +1,6 @@
 import {PostService} from '../index'
 import {injectConst, injectMethod, service} from '../../common/annotations/common'
-import Pathes from '../../dicts/pathes'
+import paths from '../../dicts/paths'
 import {Fetcher} from '../../fetchers'
 import BaseService from '../../common/services/base/base'
 import Post from '../../models/post'
@@ -21,7 +21,7 @@ export default class DefaultPostService extends BaseService implements PostServi
   }
 
   async loadPost(postId: number) {
-    const post = await this.fetcher.get(Pathes.Post.byId(postId), undefined, Post.Model)
+    const post = await this.fetcher.get(paths.Post.byId(postId), undefined, Post.Model)
 
     this.store.set('postById', post)
   }

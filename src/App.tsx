@@ -8,6 +8,7 @@ import TopMenu from './components/ui/top-menu'
 import Footer from './components/ui/footer'
 import './vendor/styles/application.scss'
 import MedicalInsuranceSceneContainer from './scenes/MedicalInsuranceScene'
+import ContactSceneContainer from './scenes/ContactScene/Contact'
 
 
 const history = createBrowserHistory()
@@ -23,12 +24,13 @@ export default class App extends React.Component<{}, {}> {
     return (
       <Router history={history}>
         <div>
-          <TopMenu/>
+          {/*<TopMenu/>*/}
           <div className="page-content">
             <Switch>
               <Route path="/" exact component={IndexSceneContainer}/>
               <Route path="/medical-insurance" exact component={MedicalInsuranceSceneContainer}/>
-              <Route path="/error" component={NotFoundScene}/>
+              <Route path="/contact" exact component={ContactSceneContainer}/>
+              <Route path="/404" component={NotFoundScene}/>
             </Switch>
           </div>
           <Footer/>

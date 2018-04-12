@@ -1,11 +1,13 @@
 import * as React from 'react'
-import SlickCarousel from '../../components/functional/slick-carousel'
 import Card from '../../components/ui/card'
 import CardTitle from '../../components/ui/card/card-title'
 import Flex from '../../components/ui/common/flex'
 import FlexBox from '../../components/ui/common/flex/flex-box'
 import OurService from '../../components/functional/our-service'
 import CardContent from '../../components/ui/card/card-content'
+import FlyTicketsTableContainer from '../../components/functional/fly-tickets-table'
+import TestimonialContainer from '../../components/functional/testimonial/testimonial'
+import MainPageSlider from '../../components/functional/main-page-slider'
 
 interface Props {
   history?: History
@@ -17,8 +19,9 @@ class IndexScene extends React.Component<Props, {}> {
   render() {
     return (
       <div>
-        <SlickCarousel/>
-        <Card paddingTop='6em' paddingBottom='6em'>
+        <MainPageSlider/>
+        <FlyTicketsTableContainer/>
+        <Card paddingTop='6em'>
           <CardTitle>Наши услуги</CardTitle>
           <CardContent horizontalPadding='3em'>
             <Flex justifyContent='space-around' flexWrap='wrap'>
@@ -36,6 +39,9 @@ class IndexScene extends React.Component<Props, {}> {
               </FlexBox>
             </Flex>
           </CardContent>
+        </Card>
+        <Card paddingTop='6em'>
+          <TestimonialContainer/>
         </Card>
       </div>
     )

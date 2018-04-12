@@ -1,44 +1,27 @@
 import * as React from 'react'
-import {Carousel} from 'react-responsive-carousel'
+import {Carousel, CarouselProps} from 'react-responsive-carousel'
 import './index.scss'
 
-interface Props {
-
+const Slider = (props: CarouselProps) => {
+  const sliderSettings = Object.assign(defaultSliderSettings, props)
+  return (
+    <div>
+      <Carousel {...sliderSettings}>
+        {props.children}
+      </Carousel>
+    </div>
+  )
 }
 
-const Slider = (props: Props) => (
-  <div>
-    <Carousel {...sliderSettings}>
-      <div className='item-block'>
-        <img src="../../../vendor/images/banner1.jpg"/>
-        <div className="carousel-caption">
-          <h3>Build Effective Designs</h3>
-          <p>Solutions made easy</p>
-          <div className="top-buttons">
-            <div className="bnr-button">
-              <a className="act" href="single.html">Read More</a>
-            </div>
-            <div className="bnr-button">
-              <a href="portfolio.html" className="two scroll ">Portfolio</a>
-            </div>
-            <div className="clearfix"> </div>
-          </div>
-  
-        </div>
-      </div>
-    </Carousel>
-  </div>
-)
 
-
-const sliderSettings = {
+const defaultSliderSettings = {
   showArrows: true,
   showStatus: false,
   showIndicators: true,
   showThumbs: false,
-  infiniteLoop: false,
+  infiniteLoop: true,
   useKeyboardArrows: true,
-  autoPlay: false,
+  autoPlay: true,
   stopOnHover: true,
   dynamicHeight: false,
   emulateTouch: false,
@@ -46,12 +29,10 @@ const sliderSettings = {
   thumbWidth: undefined,
   centerSlidePercentage: 80,
   selectedItem: 0,
-  interval: 5000,
-  transitionTime: 350,
+  interval: 2000,
+  transitionTime: 600,
   swipeScrollTolerance: 5,
   className: '',
-  // verticalSwipe: 'standard',
-  // width: '',
   onChange: () => void(0),
   onClickItem: () => void(0),
   onClickThumb: () => void(0),

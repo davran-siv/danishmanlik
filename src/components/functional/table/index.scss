@@ -1,0 +1,34 @@
+@import "~react-table/react-table.css";
+.fly-tickets-table {
+  .ReactTable .rt-thead .rt-tr {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.4;
+    background-color: #6c7ae0;
+    padding: 10px 0;
+  }
+  .ReactTable .rt-thead .rt-th, .ReactTable .rt-thead .rt-td {
+    border-right: 1px solid #fff;
+  }
+
+  .ReactTable .rt-td {
+    text-align: center;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.4;
+    padding: 16px 0;
+  }
+
+  .ReactTable.-striped .rt-tr.-odd {
+    background: transparent;
+  }
+
+  .ReactTable.-striped .rt-tr.-even {
+    background-color: #f8f6ff;
+  }
+
+  .ReactTable.-highlight .rt-tbody .rt-tr:not(.-padRow):hover{
+    background: rgba(0, 0, 0, 0.03);
+  }
+}
+

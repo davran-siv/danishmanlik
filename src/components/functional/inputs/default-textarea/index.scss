@@ -1,0 +1,64 @@
+@import "../../../../vendor/styles/elements/variables";
+
+.default-textarea-wrapper {
+  position: relative;
+  padding-top: 20px;
+
+  .error-message {
+    color: $attention-color-100;
+  }
+
+  .default-input {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    border: solid #DEEBF7 1px;
+    background-color: transparent;
+    padding: 20px 0 8px 16px;
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: none;
+      border: solid blue 1px;
+    }
+    &.has-error {
+      & ~ label {
+        color: $attention-color-100;
+      }
+    }
+    &__error {
+      height: 18px;
+      font-size: 12px;
+      padding-top: 5px;
+      color: $attention-color-100;
+    }
+
+    /* LABEL ======================================= */
+    & ~ label {
+      color: #979ea7;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      top: 30px;
+      left: 16px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    /* active state */
+    &:focus ~ label, &.not-empty ~ label {
+      top: 21px;
+      font-size: 12px;
+    }
+
+    &__error {
+      height: 18px;
+      font-size: 12px;
+      padding-top: 5px;
+      color: $attention-color-100;
+    }
+  }
+}

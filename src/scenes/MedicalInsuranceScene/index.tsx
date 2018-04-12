@@ -81,7 +81,6 @@ export default class MedicalInsuranceSceneContainer extends React.Component<Cont
     this.gender = form.$('gender').value
     console.log(form.$('gender').value)
     this.age = form.$('age').value
-    
   }
   
   private medicalInsuranceForm = MedicalInsuranceValidation(this.calculateMedicalInsuranceCost)
