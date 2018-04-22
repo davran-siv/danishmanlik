@@ -21,9 +21,9 @@ class IndexScene extends React.Component<Props, {}> {
       <div>
         <MainPageSlider/>
         <FlyTicketsTableContainer/>
-        <Card paddingTop='6em'>
-          <CardTitle>Наши услуги</CardTitle>
-          <CardContent horizontalPadding='3em'>
+        <Card>
+          <CardTitle className='with-top-padding'>Наши услуги</CardTitle>
+          <CardContent className='with-padding'>
             <Flex justifyContent='space-around' flexWrap='wrap'>
               <FlexBox>
                 <OurService/>
@@ -40,7 +40,7 @@ class IndexScene extends React.Component<Props, {}> {
             </Flex>
           </CardContent>
         </Card>
-        <Card paddingTop='6em'>
+        <Card>
           <TestimonialContainer/>
         </Card>
       </div>

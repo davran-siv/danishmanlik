@@ -25,7 +25,7 @@ export default class App extends React.Component<{}, {}> {
     return (
       <Router history={history}>
         <div>
-          {/*<TopMenu/>*/}
+          <TopMenu/>
           <div className="page-content">
             <Switch>
               <Route path="/" exact component={IndexSceneContainer}/>

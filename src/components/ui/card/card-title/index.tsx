@@ -9,7 +9,7 @@ interface Props {
 }
 
 const CardTitle = (props: Props) => {
-  const className = classNames(props.className, 'card-title')
+  const className = classNames('card-title', props.className)
   return(
     <h3 className={className}>{props.children}</h3>
   )

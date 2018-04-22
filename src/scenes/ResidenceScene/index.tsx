@@ -8,6 +8,7 @@ import Accordion from '../../components/functional/accordion'
 import AccordionItem from '../../components/functional/accordion/accordion-item'
 import AccordionItemTitle from '../../components/functional/accordion/accordion-item/accordion-item-title'
 import AccordionItemBody from '../../components/functional/accordion/accordion-item/accordion-item-body'
+import AccordionItemFooter from '../../components/functional/accordion/accordion-item/accordion-item-footer'
 
 interface Props {
   history?: History
@@ -19,16 +20,23 @@ class ResidenceScene extends React.Component<Props, {}> {
   render() {
     const accordionItems = faq.map((it, i) => {
       return (
-        <AccordionItem key={i}
-                       title={it.question}
-                       body={it.answer}
-        />
+        <AccordionItem key={i}>
+          <AccordionItemTitle>
+            {it.question}
+          </AccordionItemTitle>
+          <AccordionItemBody>
+            {it.answer}
+          </AccordionItemBody>
+          <AccordionItemFooter>
+            <button className='btn btn-primary btn-sm pull-right'>Позвонить</button>
+          </AccordionItemFooter>
+        </AccordionItem>
       )
     })
     return (
-      <Card className='residence'>
-        <CardTitle>Оформление ВНЖ</CardTitle>
-        <CardContent>
+      <Card className='with-padding'>
+        <CardTitle className='with-top-padding'>Оформление ВНЖ</CardTitle>
+        <CardContent className='with-vertical-padding'>
           <Accordion>
             {accordionItems}
           </Accordion>
@@ -52,20 +60,31 @@ export default class ResidenceSceneContainer extends React.Component<ContainerPr
 
 const faq = [
   {
-    question: 'question 1',
-    answer: 'answer 1',
+    question: 'Вид на жительство ( ikamet) в Турции',
+    answer: 'Если вы приехали в Турцию и намеренны остаться здесь больше безвизового режима то вам необходимо подавать на Вид на жительство (ikamet).Просим вас заметить что подача на ВНЖ происходит до окончания без визового режима, после окончания безвизового режима вы не можете подать на ВНЖ, в таком случаи вам необходимо вылететь и оплатить штраф на паспортном контроле.',
   },
   {
-    question: 'question 2',
-    answer: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
+    question: 'Виды вид на жительство в Турции',
+    answer: `
+      -Туристический внж
+
+      -Семейный ВНЖ
+      
+      -Студенчиский ВНЖ
+      
+      -Внж для беженцов
+      
+      -Внж для турков Ахыска
+      
+      Для подробной информации просим обратить по
+    `
   },
   {
-    question: 'question 3',
-    answer: 'answer 3'
+    question: 'Рабочая виза/Разрешение на работу в Турции.',
+    answer: 'Для официального трудоустройства вам необходимо иметь Рабочую визу/Разрешение на работу. Вы можете оформить рабочую визу/Разрешение на работу как на территории Турции, так и через Турецкое посольство/консульство. Для подробной информации просим вас обратиться ……. '
+  },
+  {
+    question: 'Медицинская Страховка для Иностранцев',
+    answer: 'Для оформления ВНЖ в Турции вы обязаны сделать медицинскую страховку. Медицинские страховки покрывает до 60% в экстренных случаях происшедшие с вами на территории Турции.  Цены на страховки зависят от вашего возраста. Для уточнения цен на Медицинскую страховку просим ас воспользоваться …..'
   },
 ]

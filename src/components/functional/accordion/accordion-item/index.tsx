@@ -1,24 +1,27 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
-import {ReactNode} from 'react'
 import AccordionItemTitle from './accordion-item-title'
-import AccordionItemBody from './accordion-item-body'
-import {IAccordionItem} from '../index'
+import {IAccordionItemProps} from '../index'
 import {observer} from 'mobx-react'
+import {ReactElement} from 'react'
 
-@observer
-export default class AccordionItem extends React.Component<IAccordionItem, {}> {
-  
-  
+export default class AccordionItem extends React.Component<IAccordionItemProps, {}> {
   render() {
     const {props} = this
-    const className = classNames('accordion-item', props.className)
-    const titleClassName = classNames('accordion-title', {'active': this.props.isOpen})
-    const bodyClassName = classNames({'active': this.props.isOpen})
+    const className = classNames('accordion-item', props.className, {"active": props.isOpen})
+  
+    const accordionItem = React.Children.map(props.children, (child, i) => {
+      if (React.isValidElement(child) && child.type === AccordionItemTitle) {
+        return React.cloneElement(child as ReactElement<any>, {
+          toggle: this.props.toggle,
+        })
+      }
+      return child
+    })
+    
     return (
       <div className={className}>
-        <button className={titleClassName} onClick={props.toggle}>{props.title}</button>
-        <AccordionItemBody className={bodyClassName}>{props.body}</AccordionItemBody>
+        {accordionItem}
       </div>
     )
   }

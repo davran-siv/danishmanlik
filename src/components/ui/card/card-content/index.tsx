@@ -16,7 +16,7 @@ const CardContent = (props: Props) => {
     paddingLeft: props.horizontalPadding,
     paddingRight: props.horizontalPadding
   }
-  const className = classNames(props.className)
+  const className = classNames('card-content', props.className)
   return (
     <div style={style} className={className}>
       {props.children}

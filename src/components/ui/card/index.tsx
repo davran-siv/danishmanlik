@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {ReactNode} from 'react'
 import * as classNames from 'classnames'
+import './index.scss'
 
 interface Props {
   children?: ReactNode
@@ -12,7 +13,7 @@ interface Props {
 }
 
 const Card = (props: Props) => {
-  const classaName = classNames(props.className)
+  const className = classNames('card', props.className)
   const style = {
     paddingTop: props.paddingTop,
     paddingRight: props.paddingRight,
@@ -20,7 +21,7 @@ const Card = (props: Props) => {
     paddingLeft: props.paddingLeft
   }
   return (
-    <div style={style} className={classaName}>
+    <div style={style} className={className}>
       {props.children}
     </div>
   )

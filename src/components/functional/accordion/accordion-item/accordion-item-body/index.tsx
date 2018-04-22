@@ -1,13 +1,10 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
 import {ReactNode} from 'react'
+import {IAccordionProps} from '../../index'
 
-interface Props {
-  className?: string
-  children?: ReactNode
-}
 
-const AccordionItemBody = (props: Props) => {
+const AccordionItemBody = (props: IAccordionProps) => {
   const classname = classNames('accordion-body', props.className)
   
   return (

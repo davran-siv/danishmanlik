@@ -1,10 +1,10 @@
 .accordion {
   .accordion-item {
     position: relative;
-    margin-bottom: 1px;
+    border-bottom: 1px solid #f1f1f1;
     width: 100%;
-    //color: #fff;
     overflow: hidden;
+    background: #fff;
     .accordion-title {
       position: relative;
       display: block;
@@ -33,13 +33,10 @@
         transition: all .35s;
         content: "+";
       }
-      &.active:after {
-        transform: rotate(315deg);
-      }
     }
 
     /* Style the accordion panel. Note: hidden by default */
-    .accordion-body {
+    .accordion-body, .accordion-footer {
       max-height: 0;
       overflow: hidden;
       background: #fff;
@@ -51,8 +48,21 @@
         margin: 1em;
         color: #223243;
       }
-      &.active {
+    }
+
+    .accordion-footer {
+      margin: 0 1em;
+    }
+
+    &.active {
+      .accordion-title:after {
+        transform: rotate(315deg);
+      }
+      .accordion-body, .accordion-footer {
         max-height: 10em;
+      }
+      .accordion-footer {
+        border-top: 1px solid #f1f1f1;
       }
     }
   }

@@ -12,8 +12,8 @@ interface Props {
 
 class Testimonial extends React.Component<Props, {}> {
   render() {
-    const testimonialItems = this.props.testimonials.map(it => (
-      <TestimonialItem {...it}/>
+    const testimonialItems = this.props.testimonials.map((it, i) => (
+      <TestimonialItem {...it} key={i}/>
     ))
     
     return (
@@ -47,7 +47,7 @@ export default class TestimonialContainer extends React.Component<ContainerProps
 
 const testimonials = [
   {
-    image: 'http://adminnews24.info/wp-content/uploads/2017/05/small-photos-21-how-to-innovate-and-create-new-business-opportunities-when-you-are.jpg',
+    image: 'http://efekt-dieta.info/cdn/images/smile-pictures/smile-pictures-20.jpg',
     fullName: 'Alice Williams',
     message: 'Очень хорошо работают! Продолжайте в том же духе!'
   }
