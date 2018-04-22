@@ -9,6 +9,7 @@ import Footer from './components/ui/footer'
 import './vendor/styles/application.scss'
 import MedicalInsuranceSceneContainer from './scenes/MedicalInsuranceScene'
 import ContactSceneContainer from './scenes/ContactScene/Contact'
+import ResidenceSceneContainer from './scenes/ResidenceScene'
 
 
 const history = createBrowserHistory()
@@ -28,6 +29,7 @@ export default class App extends React.Component<{}, {}> {
           <div className="page-content">
             <Switch>
               <Route path="/" exact component={IndexSceneContainer}/>
+              <Route path="/residence" exact component={ResidenceSceneContainer}/>
               <Route path="/medical-insurance" exact component={MedicalInsuranceSceneContainer}/>
               <Route path="/contact" exact component={ContactSceneContainer}/>
               <Route path="/404" component={NotFoundScene}/>

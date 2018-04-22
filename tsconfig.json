@@ -36,6 +36,9 @@
     "scripts",
     "webpack"
   ],
+  "include": [
+    "src/**/*"
+  ],
   "types": [
     "typePatches"
   ]

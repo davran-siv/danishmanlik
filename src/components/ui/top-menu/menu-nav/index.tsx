@@ -24,11 +24,11 @@ const MenuNav = (props: Props) => {
 const menuItems = [
   {
     name: 'Оформление ВНЖ',
-    to: ''
+    to: 'residence'
   },
   {
     name: 'Медецинские страховки',
-    to: '/medical-insurance'
+    to: 'medical-insurance'
   },
   {
     name: 'Перевод документов',
@@ -52,7 +52,7 @@ const dropdownMenuItems = [
 ]
 
 const mainMenu = menuItems.map((it, i) =>
-                                 (<MenuItem key={i} to={it.to} className='request'>{it.name}</MenuItem>))
+                                 (<MenuItem key={i} to={`/${it.to}`} className='request'>{it.name}</MenuItem>))
 
 const dropdownMenu =
   <MenuDropdown dropDownName='Dropdown'>
