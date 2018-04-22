@@ -1,17 +1,20 @@
 import * as React from 'react'
 import './index.scss'
-import {ReactNode} from 'react'
+import {ReactChild, ReactElement, ReactNode} from 'react'
 import AccordionItem from './accordion-item'
 
 export interface IAccordionItem {
   title: string
   body: string
+  isOpen?: boolean
+  toggle?: any
+  className?: string
+  children?: ReactNode
 }
 
 interface AccordionProps {
-  children?: ReactNode
-  childAct?: any
-  items: IAccordionItem[]
+  children: ReactNode
+  // items: IAccordionItem[]
 }
 
 interface State {
@@ -32,17 +35,17 @@ export default class Accordion extends React.Component<AccordionProps, State> {
   }
   
   render() {
-    const accordionItems = this.props.items.map((it, i) => {
-      return (
-        <AccordionItem key={i}
-                       title={it.title}
-                       body={it.body}
-                       isOpen={(i === this.state.accordionOpenItemIndex)}
-                       toggle={() => {
-                         this.toggle(i)
-                       }}
-        />
-      )
+    const {props} = this
+    
+    const accordionItems = React.Children.map(props.children, (child, i) => {
+      console.log(i)
+      if (React.isValidElement(child)) {
+        return React.cloneElement(child as ReactElement<any>, {
+          toggle: () => this.toggle(i),
+          isOpen: (this.state.accordionOpenItemIndex === i)
+        })
+      }
+      return child
     })
     
     return (

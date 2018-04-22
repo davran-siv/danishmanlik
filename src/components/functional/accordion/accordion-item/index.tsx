@@ -6,16 +6,8 @@ import AccordionItemBody from './accordion-item-body'
 import {IAccordionItem} from '../index'
 import {observer} from 'mobx-react'
 
-interface Props extends IAccordionItem {
-  isOpen?: boolean
-  toggle?: any
-  className?: string
-  children?: ReactNode
-  
-}
-
 @observer
-export default class AccordionItem extends React.Component<Props, {}> {
+export default class AccordionItem extends React.Component<IAccordionItem, {}> {
   
   
   render() {
