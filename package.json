@@ -45,6 +45,7 @@
     "webpack-dev-server": "^2.9.5"
   },
   "dependencies": {
+    "@types/react-burger-menu": "^2.2.0",
     "@types/react-select": "^1.2.4",
     "@types/react-table": "6.7.0",
     "classnames": "^2.2.5",

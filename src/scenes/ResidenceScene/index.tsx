@@ -34,9 +34,9 @@ class ResidenceScene extends React.Component<Props, {}> {
       )
     })
     return (
-      <Card className='with-padding'>
-        <CardTitle className='with-top-padding'>Оформление ВНЖ</CardTitle>
-        <CardContent className='with-vertical-padding'>
+      <Card className='padding'>
+        <CardTitle className='top-padding'>Оформление ВНЖ</CardTitle>
+        <CardContent className='top-padding'>
           <Accordion>
             {accordionItems}
           </Accordion>

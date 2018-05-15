@@ -1,22 +1,47 @@
 import * as React from 'react'
-import MenuToggleButton from './menu-toggle-button'
-import MenuLogo from './menu-logo'
-import MenuNav from './menu-nav'
+import {slide as Menu} from 'react-burger-menu'
+import MenuItem from './menu-item'
+import './index.scss'
 
-const TopMenu = () => (
+const TopMenu = () => {
+  const showSettings = (event: any) => {
+    event.preventDefault()
+  }
   
-  <div className="top_header" id="home">
-    <nav className="navbar navbar-default navbar-fixed-top">
-      <div className="nav_top_fx_w3ls_agileinfo">
-        <div className="navbar-header">
-          <MenuToggleButton/>
-          <MenuLogo/>
-        </div>
-        <MenuNav/>
-      </div>
-    </nav>
-  </div>
-)
+  const mainMenu = menuItems.map((it, i) =>
+                                   (<MenuItem key={i} to={`/${it.to}`} className='menu-item'>{it.name}</MenuItem>))
+  
+  return (
+    <Menu right burgerButtonClassName='right'>
+      <nav className='bt-item-list'>
+        {mainMenu}
+      </nav>
+    </Menu>
+  )
+}
+
+const menuItems = [
+  {
+    name: 'Главная',
+    to: ''
+  },
+  {
+    name: 'Оформление ВНЖ',
+    to: 'residence'
+  },
+  {
+    name: 'Медецинские страховки',
+    to: 'medical-insurance'
+  },
+  {
+    name: 'Перевод документов',
+    to: ''
+  },
+  {
+    name: 'Визы',
+    to: ''
+  }
+]
 
 export default TopMenu
 

@@ -35,9 +35,9 @@ class MedicalInsuranceScene extends React.Component<Props, {}> {
       <MedicalInsurancePrice age={props.age} gender={props.gender}/> : null
     return (
       <div>
-        <Card className='with-padding'>
-          <CardTitle className='with-top-padding'>Узнайте стоимость медицинской страховки</CardTitle>
-          <CardContent className='with-vertical-padding'>
+        <Card className='padding'>
+          <CardTitle className='top-padding'>Узнайте стоимость медицинской страховки</CardTitle>
+          <CardContent className='vertical-padding'>
             <Flex justifyContent='space-evenly' flexWrap='wrap'>
               <FlexBox>
                 <VerticalIndentation verticalIndentation='1em'>

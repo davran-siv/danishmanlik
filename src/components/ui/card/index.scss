@@ -1,8 +1,8 @@
 .card {
   background-color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,.13);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
 
-  &.with-padding{
+  &.padding {
     margin: 3em;
   }
 
@@ -14,7 +14,7 @@
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
 
-    &.with-top-padding {
+    &.top-padding {
       padding-top: 1em;
     }
   }
@@ -22,14 +22,17 @@
   .card-content {
     background-color: #ffffff;
 
-    &.with-vertical-padding{
+    &.vertical-padding {
       padding: 3em 0;
     }
-    &.with-horizontal-padding{
+    &.horizontal-padding {
       padding: 0 3em;
     }
-    &.with-padding{
+    &.padding {
       padding: 3em;
+    }
+    &.top-padding {
+      padding-top: 3em;
     }
   }
 }

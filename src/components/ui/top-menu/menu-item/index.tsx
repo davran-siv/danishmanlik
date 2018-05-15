@@ -11,8 +11,8 @@ interface Props {
 }
 
 const MenuItem = (props: Props) => {
-  const className = classNames({active: props.isActive})
-  return (<li className={className}><LinkTo to={props.to}>{props.children}</LinkTo></li>)
+  const className = classNames(props.className, {active: props.isActive})
+  return (<LinkTo to={props.to} className={className}>{props.children}</LinkTo>)
 }
 
 export default MenuItem
