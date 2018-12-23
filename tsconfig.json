@@ -22,7 +22,9 @@
     "strictNullChecks": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "declaration": false,
+    "keyofStringsOnly": true,
     "typeRoots": [
       "node_modules/@types",
       "src/common/types"

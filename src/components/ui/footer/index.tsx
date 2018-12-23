@@ -7,35 +7,26 @@ import MenuItem from '../top-menu/menu-item'
 import FooterContactUs from './footer-contact-us'
 
 const Footer = () => (
-  <div className="footer">
+  <div className="footer" id='contacts'>
     <div className="footer_inner_info_w3ls_agileits">
       <div className="col-md-3 footer-left">
         <h2><Logo/></h2>
-        <p>Lorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
+        <p>Следите за нами в социальных сетях</p>
         <ul className="social-nav model-3d-0 footer-social social two">
           <FooterSocialNetworks/>
         </ul>
       </div>
-      <div className="col-md-9 footer-right">
+      <div className="col-md-4"/>
+      <div className="col-md-5 footer-right">
         <div className="sign-grds">
-          <div className="col-md-4 sign-gd">
-            <h4>Latest <span>Info</span></h4>
-            <ul>
-              {footerMenu}
-            </ul>
-          </div>
-          <div className="col-md-3 sign-gd flickr-post">
-            <h4>Our <span>Works</span></h4>
-            <ul>
-            
-            </ul>
-          </div>
           <FooterContactUs/>
           <Clearfix/>
         </div>
       </div>
       <Clearfix/>
-      <p className="copy-right">&amp;copy 2018 {configuration.websiteName}. All rights reserved</p>
+      <p className="copy-right">
+        &reg; 2016 - {new Date().getFullYear()} {configuration.companyName}. Все права защищены
+      </p>
     </div>
   </div>
 )

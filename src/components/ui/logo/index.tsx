@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Logo = (props: Props) => (
-  <LinkTo to='/'><i className="fa fa-clone" aria-hidden="true"/> {configuration.websiteName}
+  <LinkTo to='/'><i className="fa fa-clone" aria-hidden="true"/> {configuration.companyName}
     {(props.withMotto) && <span className="desc">{configuration.websiteMotto}</span>}
   </LinkTo>
 )

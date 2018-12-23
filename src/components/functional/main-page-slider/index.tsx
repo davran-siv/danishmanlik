@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { configuration } from '../../../configs'
 import Slider from '../slick-carousel'
 import './index.scss'
 
@@ -10,30 +11,14 @@ const MainPageSlider = (props: Props) => (
     <div className='item-block'>
       <img src="../../../vendor/images/banner1.jpg"/>
       <div className="carousel-caption">
-        <h3>Build Effective Designs</h3>
-        <p>Solutions made easy</p>
+        <h3>{configuration.companyName}</h3>
+        <p>Foreign consulting company</p>
         <div className="top-buttons">
           <div className="bnr-button">
-            <a className="act" href="single.html">Read More</a>
+            <a className="act" href="single.html">О компании</a>
           </div>
           <div className="bnr-button">
-            <a href="portfolio.html" className="two scroll ">Portfolio</a>
-          </div>
-          <div className="clearfix"> </div>
-        </div>
-      </div>
-    </div>
-    <div className='item-block'>
-      <img src="../../../vendor/images/banner1.jpg"/>
-      <div className="carousel-caption">
-        <h3>Build Effective Designs</h3>
-        <p>Solutions made easy</p>
-        <div className="top-buttons">
-          <div className="bnr-button">
-            <a className="act" href="single.html">Read More</a>
-          </div>
-          <div className="bnr-button">
-            <a href="portfolio.html" className="two scroll ">Portfolio</a>
+            <a href="#contacts" className="two scroll ">Контаты</a>
           </div>
           <div className="clearfix"> </div>
         </div>

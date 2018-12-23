@@ -15,12 +15,12 @@ class Testimonial extends React.Component<Props, {}> {
     const testimonialItems = this.props.testimonials.map((it, i) => (
       <TestimonialItem {...it} key={i}/>
     ))
-    
+
     return (
       <div>
         <div className="testimonials">
           <div className="container">
-            <h3 className="tittle-w3ls cen">Testimonials</h3>
+            <h3 className="tittle-w3ls cen">Отзывы</h3>
             <Slider showArrows={false}>
               {testimonialItems}
             </Slider>
@@ -40,7 +40,7 @@ export default class TestimonialContainer extends React.Component<ContainerProps
       <div>
         <Testimonial testimonials={testimonials}/>
       </div>
-    
+
     )
   }
 }

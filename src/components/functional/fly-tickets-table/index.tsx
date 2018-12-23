@@ -5,10 +5,10 @@ import FlyTicket from '../../../models/fly-ticket'
 import LinkTo from '../../ui/common/link-to'
 import Table from '../table'
 import Moment from 'react-moment'
-import {FlyTicketService} from '../../../services'
-import {instanceRegistry} from '../../../common/annotations/common'
-import {FlyTicketMapper} from '../../../mappers'
-import {observer} from 'mobx-react'
+import { FlyTicketService } from '../../../services'
+import { instanceRegistry } from '../../../common/annotations/common'
+import { FlyTicketMapper } from '../../../mappers'
+import { observer } from 'mobx-react'
 
 interface Props {
   history?: History
@@ -20,7 +20,7 @@ interface Props {
 class FlyTicketsTable extends React.Component<Props, {}> {
   render() {
 
-  
+
     return (
       <div className='fly-tickets-table'>
         <Table data={this.props.flyTickets} columns={tableColumns}/>
@@ -37,11 +37,11 @@ interface ContainerProps {
 export default class FlyTicketsTableContainer extends React.Component<ContainerProps, {}> {
   private flyTicketService: FlyTicketService = instanceRegistry.get('FlyTicketService')
   private flyTicketMapper: FlyTicketMapper = instanceRegistry.get('FlyTicketMapper')
-  
+
   componentWillMount() {
     this.flyTicketService.getAll()
   }
-  
+
   render() {
     const allFlyTickets = this.flyTicketMapper.all.list.map(it => ({
       id: it.id,
@@ -80,7 +80,6 @@ const tableColumns = [
     Header: 'Время отлета',
     id: 'departureTime',
     accessor: (d: string) => <Moment format='DD.MM.YYYY hh:mm'>{d}</Moment>
-    
   },
   {
     Header: 'Время прилета',
@@ -99,7 +98,7 @@ const tableColumns = [
   {
     Header: 'Купить',
     id: 'remainingPlaces',
-    accessor: (d: FlyTicket.Model) => (d.remainingPlaces > 0) ? <LinkTo to=''>Купить</LinkTo> :
+    accessor: (d: FlyTicket.Model) => (d.remainingPlaces > 0) ? <LinkTo to=''>Уточнить</LinkTo> :
       <LinkTo to=''>Уточнить</LinkTo>
   }
 ]

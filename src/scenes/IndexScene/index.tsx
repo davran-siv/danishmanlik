@@ -9,14 +9,25 @@ import FlyTicketsTableContainer from '../../components/functional/fly-tickets-ta
 import TestimonialContainer from '../../components/functional/testimonial/testimonial'
 import MainPageSlider from '../../components/functional/main-page-slider'
 
+interface serviceDescriptionDTO {
+  description: string
+  image: string
+}
+
 interface Props {
   history?: History
   location?: any
   match?: any
+  servicesList: serviceDescriptionDTO[]
 }
 
 class IndexScene extends React.Component<Props, {}> {
   render() {
+    const ourServiceBlockList = this.props.servicesList.map((it, i) =>
+                                                              <FlexBox key={i}>
+                                                                <OurService description={it.description}
+                                                                            image={it.image}/>
+                                                              </FlexBox>)
     return (
       <div>
         <MainPageSlider/>
@@ -25,23 +36,9 @@ class IndexScene extends React.Component<Props, {}> {
           <CardTitle className='top-padding'>Наши услуги</CardTitle>
           <CardContent className='padding'>
             <Flex justifyContent='space-around' flexWrap='wrap'>
-              <FlexBox>
-                <OurService/>
-              </FlexBox>
-              <FlexBox>
-                <OurService/>
-              </FlexBox>
-              <FlexBox>
-                <OurService/>
-              </FlexBox>
-              <FlexBox>
-                <OurService/>
-              </FlexBox>
+              {ourServiceBlockList}
             </Flex>
           </CardContent>
-        </Card>
-        <Card>
-          <TestimonialContainer/>
         </Card>
       </div>
     )
@@ -55,10 +52,29 @@ interface ContainerProps {
 export default class IndexSceneContainer extends React.Component<ContainerProps, {}> {
   render() {
     return (
-      <IndexScene/>
+      <IndexScene servicesList={servicesList}/>
     )
   }
-  
+
 }
+
+const servicesList = [
+  {
+    description: `Оформление ВНЖ в Турции,<br/> Рабочая Виза в Турции,<br/> Визы в другие страны`,
+    image: 'https://cdn-images-1.medium.com/max/2000/1*CqQTKb0N2o0suacfiluO8w.jpeg'
+  },
+  {
+    description: 'Медицинская страковка',
+    image: 'https://cdn-images-1.medium.com/max/2000/1*CqQTKb0N2o0suacfiluO8w.jpeg'
+  },
+  {
+    description: 'Работа в Турции',
+    image: 'https://cdn-images-1.medium.com/max/2000/1*CqQTKb0N2o0suacfiluO8w.jpeg'
+  },
+  {
+    description: 'Юридическая Консультация,<br/> Перевод Документов',
+    image: 'https://cdn-images-1.medium.com/max/2000/1*CqQTKb0N2o0suacfiluO8w.jpeg'
+  }
+]
 
 

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { configuration } from '../../../../configs'
 import {SOCIAL_BRANDS} from '../../../../const/social-brands'
 import SocialIcon from '../../social-icon'
 
@@ -10,19 +11,11 @@ const FooterSocialNetworks = () => {
 const socialNetworks = [
   {
     brand: SOCIAL_BRANDS.facebook,
-    path: 'www.facebook.com'
+    path: configuration.contacts.facebookUrl
   },
   {
     brand: SOCIAL_BRANDS.instagram,
-    path: 'www.instagram.com'
-  },
-  {
-    brand: SOCIAL_BRANDS.pinterest,
-    path: 'www.pinterest.com'
-  },
-  {
-    brand: SOCIAL_BRANDS.twitter,
-    path: 'www.twitter.com'
+    path: configuration.contacts.instagramUrl
   }
 ]
 

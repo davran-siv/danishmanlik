@@ -7,10 +7,10 @@ const TopMenu = () => {
   const showSettings = (event: any) => {
     event.preventDefault()
   }
-  
+
   const mainMenu = menuItems.map((it, i) =>
                                    (<MenuItem key={i} to={`/${it.to}`} className='menu-item'>{it.name}</MenuItem>))
-  
+
   return (
     <Menu right burgerButtonClassName='right'>
       <nav className='bt-item-list'>
@@ -26,19 +26,23 @@ const menuItems = [
     to: ''
   },
   {
-    name: 'Оформление ВНЖ',
+    name: 'Работа в Турции',
     to: 'residence'
   },
   {
-    name: 'Медецинские страховки',
+    name: 'Медецинская страховка',
     to: 'medical-insurance'
   },
   {
-    name: 'Перевод документов',
+    name: 'Авиабилеты',
     to: ''
   },
   {
-    name: 'Визы',
+    name: 'Юридическая Консультация',
+    to: ''
+  },
+  {
+    name: 'Визы в другие страны',
     to: ''
   }
 ]
