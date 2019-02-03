@@ -25,10 +25,10 @@ interface Props {
 
 @observer
 class MedicalInsuranceScene extends React.Component<Props, {}> {
-  
+
   @observable
   private selectedAge: number
-  
+
   render() {
     const {props} = this
     const medicalInsuranceResult = (props.gender && props.age) ?
@@ -36,12 +36,12 @@ class MedicalInsuranceScene extends React.Component<Props, {}> {
     return (
       <div>
         <Card className='padding'>
-          <CardTitle className='top-padding'>Узнайте стоимость медицинской страховки</CardTitle>
+          <CardTitle className='top-padding'>{i18n.t('findOutTheCostOfHealthInsurance')}</CardTitle>
           <CardContent className='vertical-padding'>
             <Flex justifyContent='space-evenly' flexWrap='wrap'>
               <FlexBox>
                 <VerticalIndentation verticalIndentation='1em'>
-                  <h3>Введите Ваш пол и возраст</h3>
+                  <h3>{i18n.t('enterYourGenderAndAge')}</h3>
                 </VerticalIndentation>
               </FlexBox>
               <FlexBox>
@@ -69,23 +69,22 @@ interface ContainerProps {
 
 @observer
 export default class MedicalInsuranceSceneContainer extends React.Component<ContainerProps, {}> {
-  
+
   @observable
   private gender: 'male' | 'female'
-  
+
   @observable
   private age: number
-  
+
   @action
   public calculateMedicalInsuranceCost = (form: any) => {
     this.gender = form.$('gender').value
-    console.log(form.$('gender').value)
     this.age = form.$('age').value
   }
-  
+
   private medicalInsuranceForm = MedicalInsuranceValidation(this.calculateMedicalInsuranceCost)
-  
-  
+
+
   render() {
     return (
       <MedicalInsuranceScene form={this.medicalInsuranceForm} gender={this.gender} age={this.age}/>
@@ -96,10 +95,10 @@ export default class MedicalInsuranceSceneContainer extends React.Component<Cont
 const genderOptions = [
   {
     value: 'male',
-    label: 'Мужской'
+    label: i18n.t('male')
   },
   {
     value: 'female',
-    label: 'Женский'
+    label: i18n.t('female')
   }
 ]

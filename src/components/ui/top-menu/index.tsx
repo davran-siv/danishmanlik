@@ -1,13 +1,11 @@
 import * as React from 'react'
-import {slide as Menu} from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu'
+import i18n from '../../../common/translate'
+import SelectLanguage from '../../functional/select-language'
 import MenuItem from './menu-item'
 import './index.scss'
 
 const TopMenu = () => {
-  const showSettings = (event: any) => {
-    event.preventDefault()
-  }
-
   const mainMenu = menuItems.map((it, i) =>
                                    (<MenuItem key={i} to={`/${it.to}`} className='menu-item'>{it.name}</MenuItem>))
 
@@ -15,6 +13,7 @@ const TopMenu = () => {
     <Menu right burgerButtonClassName='right'>
       <nav className='bt-item-list'>
         {mainMenu}
+        <SelectLanguage/>
       </nav>
     </Menu>
   )
@@ -22,28 +21,28 @@ const TopMenu = () => {
 
 const menuItems = [
   {
-    name: 'Главная',
+    name: i18n.t('menuItems.homePage'),
     to: ''
   },
   {
-    name: 'Работа в Турции',
+    name: i18n.t('menuItems.workInTurkey'),
     to: 'residence'
   },
   {
-    name: 'Медецинская страховка',
+    name: i18n.t('menuItems.medicalInsurance'),
     to: 'medical-insurance'
   },
   {
-    name: 'Авиабилеты',
-    to: ''
+    name: i18n.t('menuItems.flights'),
+    to: 'flights'
   },
   {
-    name: 'Юридическая Консультация',
-    to: ''
+    name: i18n.t('menuItems.lawConsultation'),
+    to: 'law-consultation'
   },
   {
-    name: 'Визы в другие страны',
-    to: ''
+    name: i18n.t('menuItems.visasToOtherCountries'),
+    to: 'visas-to-other-countries'
   }
 ]
 

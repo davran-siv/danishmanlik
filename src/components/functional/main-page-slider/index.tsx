@@ -1,4 +1,5 @@
 import * as React from 'react'
+import i18n from '../../../common/translate'
 import { configuration } from '../../../configs'
 import Slider from '../slick-carousel'
 import './index.scss'
@@ -15,10 +16,10 @@ const MainPageSlider = (props: Props) => (
         <p>Foreign consulting company</p>
         <div className="top-buttons">
           <div className="bnr-button">
-            <a className="act" href="single.html">О компании</a>
+            <a className="act" href="single.html">{i18n.t('aboutCompany')}</a>
           </div>
           <div className="bnr-button">
-            <a href="#contacts" className="two scroll ">Контаты</a>
+            <a href="#contacts" className="two scroll">{i18n.t('contacts')}</a>
           </div>
           <div className="clearfix"> </div>
         </div>

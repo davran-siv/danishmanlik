@@ -65,40 +65,39 @@ export default class FlyTicketsTableContainer extends React.Component<ContainerP
 
 const tableColumns = [
   {
-    Header: 'Откуда',
+    Header: i18n.t('whereFrom'),
     accessor: 'from'
   },
   {
-    Header: 'Куда',
+    Header: i18n.t('to'),
     accessor: 'to'
   },
   {
-    Header: 'Путь',
+    Header: i18n.t('way'),
     accessor: 'way'
   },
   {
-    Header: 'Время отлета',
+    Header: i18n.t('departureTime'),
     id: 'departureTime',
     accessor: (d: string) => <Moment format='DD.MM.YYYY hh:mm'>{d}</Moment>
   },
   {
-    Header: 'Время прилета',
+    Header: i18n.t('arrivalTime'),
     id: 'arrivalTime',
     accessor: (d: string) => <Moment format='DD.MM.YYYY hh:mm'>{d}</Moment>
   },
   {
-    Header: 'Авиалиния',
+    Header: i18n.t('airline'),
     accessor: 'airline'
   },
   {
-    Header: 'Цена',
+    Header: i18n.t('price'),
     id: 'price',
     accessor: (d: FlyTicket.Model) => `${d.price.value} ${d.price.currency}`
   },
   {
-    Header: 'Купить',
+    Header: i18n.t('buy'),
     id: 'remainingPlaces',
-    accessor: (d: FlyTicket.Model) => (d.remainingPlaces > 0) ? <LinkTo to=''>Уточнить</LinkTo> :
-      <LinkTo to=''>Уточнить</LinkTo>
+    accessor: () => <LinkTo to=''>{i18n.t('specify')}</LinkTo>
   }
 ]

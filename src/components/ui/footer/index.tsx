@@ -1,4 +1,5 @@
 import * as React from 'react'
+import i18n from '../../../common/translate'
 import Clearfix from '../common/clearfix'
 import Logo from '../logo'
 import {configuration} from '../../../configs'
@@ -11,7 +12,7 @@ const Footer = () => (
     <div className="footer_inner_info_w3ls_agileits">
       <div className="col-md-3 footer-left">
         <h2><Logo/></h2>
-        <p>Следите за нами в социальных сетях</p>
+        <p>{i18n.t('followUs')}</p>
         <ul className="social-nav model-3d-0 footer-social social two">
           <FooterSocialNetworks/>
         </ul>
@@ -25,34 +26,10 @@ const Footer = () => (
       </div>
       <Clearfix/>
       <p className="copy-right">
-        &reg; 2016 - {new Date().getFullYear()} {configuration.companyName}. Все права защищены
+        &reg; 2016 - {new Date().getFullYear()} {configuration.companyName}. {i18n.t('allRightReserved')}
       </p>
     </div>
   </div>
 )
-const footerMenuItems = [
-  {
-    name: 'Home',
-    to: ''
-  },
-  {
-    name: 'About',
-    to: ''
-  },
-  {
-    name: 'Portfolio',
-    to: ''
-  },
-  {
-    name: 'Signin',
-    to: ''
-  },
-  {
-    name: 'Contact',
-    to: ''
-  }
-]
-
-const footerMenu = footerMenuItems.map((it, i) => (<MenuItem key={i} to={it.to}>{it.name}</MenuItem>))
 
 export default Footer
