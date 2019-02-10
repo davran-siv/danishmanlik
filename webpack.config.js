@@ -78,7 +78,7 @@ module.exports = {
       // static assets
       {test: /\.(html|json)$/, use: 'html-loader'},
       {
-        test: /\.(jpg|png|svg)$/,
+        test: /\.(jpg|png|svg|gif)$/,
         use: {
           loader: "url-loader",
           options: {
@@ -87,6 +87,7 @@ module.exports = {
           },
         },
       },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ],
   },
   plugins: [
@@ -119,6 +120,7 @@ module.exports = {
     contentBase: sourcePath,
     historyApiFallback: true,
     hot: true,
+    port: process.env.PORT || 8080,
     stats: {
       warnings: false
     },

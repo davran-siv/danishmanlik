@@ -1,0 +1,23 @@
+.medical-insurance-price-result {
+  text-align: center;
+  -webkit-transition: 2s ease-in;
+  -moz-transition: 2s ease-in;
+  -ms-transition: 2s ease-in;
+  -o-transition: 2s ease-in;
+  transition: 2s ease-in;
+  border: 1px solid #ddd;
+  padding: 3em 2em;
+  background: #ffffff;
+
+  img {
+    max-width: 220px;
+  }
+  h3 {
+    padding-top: 10px;
+    font-weight: bold;
+  }
+  b {
+    -webkit-transition: ease-in 2s; /* Safari */
+    transition: ease-in 2s;
+  }
+}

@@ -12,7 +12,7 @@ const loader = (f: (name: string) => Promise<any>) =>
                                   .then(it => it.filter(it => !!it))
 
 /**
- * we need to hard code import pathes for webpack
+ * we need to hard code import paths for webpack
  */
 
 const servicesLoader = loader(it => import(`../services/${it}/${implementationName}`))

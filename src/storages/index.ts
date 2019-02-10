@@ -1,6 +1,7 @@
 import Todo from '../models/todo'
 import {RecordStorage} from '../common/storages/base'
 import Post from '../models/post'
+import FlyTicket from '../models/fly-ticket'
 
 export interface TodoRecordStorage extends RecordStorage<Todo.Records> {
   newModel(): Todo.Model
@@ -13,5 +14,9 @@ export interface TodoRecordStorage extends RecordStorage<Todo.Records> {
 }
 
 export interface PostRecordStorage extends RecordStorage<Post.Records> {
+
+}
+
+export interface FlyTicketRecordStorage extends RecordStorage<FlyTicket.Records> {
 
 }

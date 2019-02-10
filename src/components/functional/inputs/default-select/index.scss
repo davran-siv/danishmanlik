@@ -1,0 +1,85 @@
+@import "../../../../vendor/styles/elements/variables";
+
+.default-select-wrapper {
+  position: relative;
+  .error-message {
+    color: $attention-color-100;
+  }
+
+
+}
+.default-select {
+  font-size: 18px;
+  line-height: 22px;
+  .Select-control {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #DEEBF7;
+  }
+  .Select-arrow-zone {
+    text-align: right;
+    padding-right: 0;
+  }
+  .Select-arrow {
+    border-color: #C4C4C4 transparent transparent;
+    border-style: solid;
+    border-width: 4px 4px 1px;
+  }
+  .Select-placeholder, .Select-value {
+    padding-left: 0 !important;
+  }
+  .Select-input {
+    padding-left: 0px;
+  }
+  .Select-input > input {
+    line-height: 22px;
+    font-family: sans-serif;
+  }
+  .Select-clear {
+    padding-top: 5px;
+  }
+  .Select-value-label {
+    display: inline-block;
+  }
+  &.has-error {
+    & ~ label {
+      color: $attention-color-100;
+    }
+  }
+
+  /* LABEL ======================================= */
+  & ~ label {
+    color: #979ea7;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    top: 3px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+
+  /* active state */
+  &.is-focused ~ label, &.has-value ~ label {
+    top: -15px;
+    font-size: 12px;
+  }
+}
+
+.Select.default-select.is-open > .Select-control .Select-arrow {
+  top: -2px;
+  border-color: transparent transparent #C4C4C4 !important;
+  border-width: 0 4px 4px !important;
+}
+
+.Select.default-select.is-focused > .Select-control {
+  background: transparent;
+}
+
+.Select.Select--multi .Select-input {
+  margin-left: 0px;
+}

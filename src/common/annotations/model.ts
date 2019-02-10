@@ -20,11 +20,11 @@ export const attr = (options?: Function | AttributeDefinitionOptions) => (target
   if (!Reflect.get(target, ATTRIBUTE_LIST)) {
     Reflect.set(target, ATTRIBUTE_LIST, [])
   }
-  
+
   const type = options instanceof Function ? options : options && options.type
-  
+
   const attributeList = Reflect.get(target, ATTRIBUTE_LIST)
-  
+
   attributeList.push(new AttributeDefinition(
     Reflect.getMetadata('design:type', target, propertyKey),
     propertyKey,
@@ -42,41 +42,41 @@ const strategyGenerator = (entityResolver: (json: any, constructor: Function) =>
   return {
     Array: (json: any, attribute: AttributeDefinition, constructor: Function) => {
       if (!(json instanceof Array)) {
-        throw new Error(`${constructor.name}::${attribute.name} is not an Array`)
+        throw new Error(`${constructor.name}::${String(attribute.name)} is not an Array`)
       }
       return json.map((it: any) => {
         if (!attribute.generic) {
-          throw new Error(`${constructor.name}::${attribute.name} has not specified type`)
+          throw new Error(`${constructor.name}::${String(attribute.name)} has not specified type`)
         }
         return propertyResolver(
           it,
-          new AttributeDefinition(attribute.generic, `${attribute.name}[]`), attribute.generic
+          new AttributeDefinition(attribute.generic, `${String(attribute.name)}[]`), attribute.generic
         )
       })
     },
-    
+
     Boolean: (json: any, attribute: AttributeDefinition) =>
       (json instanceof String) ? attribute.type(json === 'true') : attribute.type(json),
-    
+
     String: (json: any, attribute: AttributeDefinition) => attribute.type(json),
-    
+
     Object: (json: any, attribute: AttributeDefinition) => attribute.type(json),
-    
+
     Number: (json: any, attribute: AttributeDefinition, constructor: Function) => {
       const number = attribute.type(json)
       if (Number.isNaN(number)) {
-        throw new Error(`${constructor.name}::${attribute.name} is not a Number`)
+        throw new Error(`${constructor.name}::${String(attribute.name)} is not a Number`)
       }
       return number
     },
-    
+
     Default: (json: any, attribute: AttributeDefinition) => entityResolver(json, attribute.type)
   }
 }
 
 const checkProperty = (json: any, attribute: AttributeDefinition, constructor: Function) => {
   if (!attribute.options.optional && (json === null || json === undefined)) {
-    throw new Error(`${constructor.name}::${attribute.name} is not optional field`)
+    throw new Error(`${constructor.name}::${String(attribute.name)} is not optional field`)
   }
   const checkPropertyStrategyList = strategyGenerator(checkJson, checkProperty)
   const checkPropertyStrategy = checkPropertyStrategyList[attribute.type.name] || checkPropertyStrategyList.Default

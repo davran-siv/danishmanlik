@@ -1,0 +1,38 @@
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+
+  &.padding {
+    margin: 3em;
+  }
+
+  .card-title {
+    color: #1b1b1b;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+
+    &.top-padding {
+      padding-top: 1em;
+    }
+  }
+
+  .card-content {
+    background-color: #ffffff;
+
+    &.vertical-padding {
+      padding: 3em 0;
+    }
+    &.horizontal-padding {
+      padding: 0 3em;
+    }
+    &.padding {
+      padding: 3em;
+    }
+    &.top-padding {
+      padding-top: 3em;
+    }
+  }
+}

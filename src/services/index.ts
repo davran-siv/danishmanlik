@@ -20,3 +20,7 @@ export interface AuthService extends BaseService {
   
   getAuthInfo(): any
 }
+
+export interface FlyTicketService extends BaseService {
+  getAll(): void
+}
