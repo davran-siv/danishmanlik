@@ -120,6 +120,7 @@ module.exports = {
     contentBase: sourcePath,
     historyApiFallback: true,
     hot: true,
+    port: process.env.PORT || 8080,
     stats: {
       warnings: false
     },
